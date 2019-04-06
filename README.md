@@ -1,2 +1,2 @@
-# docker-centos
-Docker image with centos
+# docker-ubuntu
+Docker image with ubuntu
