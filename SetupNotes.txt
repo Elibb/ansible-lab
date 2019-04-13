@@ -1,7 +1,9 @@
-Issues during setup:
+NOTE1 Env Setup
+
+### Download OS from osboxes
+https://www.osboxes.org/
 
 ### Docker cannot start up
-
 sudo service docker stop
 sudo nohup docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &
 
@@ -27,3 +29,11 @@ rsync -avz --delete /Users/Eli/dev/devops/docker-centos root@192.168.1.110:/root
 docker container run -it -d --rm --name centos-ssh centos-ssh sh
 
 
+### Fix host issue
+export ANSIBLE_HOST_KEY_CHECKING=False
+
+
+NOTE2 Web Application
+### Manually setup
+Ubuntu:https://github.com/mmumshad/simple-webapp
+Centos:https://www.udemy.com/learn-ansible-advanced/learn/v4/t/lecture/12059074?start=1

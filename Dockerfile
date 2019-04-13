@@ -7,6 +7,10 @@ FROM ubuntu:16.04
 # RUN yum update -y && yum install -y openssh-server
 RUN apt-get update && apt-get install -y openssh-server
 
+# install python packages
+# https://github.com/ansible/ansible/issues/46980
+RUN apt-get install -y python-minimal python-simplejson
+
 RUN mkdir /var/run/sshd
 RUN echo 'root:Password123' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
