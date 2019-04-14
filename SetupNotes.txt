@@ -37,3 +37,22 @@ NOTE2 Web Application
 ### Manually setup
 Ubuntu:https://github.com/mmumshad/simple-webapp
 Centos:https://www.udemy.com/learn-ansible-advanced/learn/v4/t/lecture/12059074?start=1
+Centos Playbook: https://github.com/kodekloudhub/simple_web_application
+
+###Fix db_user doesn't have permission in mysql
+GRANT ALL privileges ON *.* to db_user@localhost IDENTIFIED BY 'Passw0rd';
+
+###Fix cannot telnet server
+Eli@MacBook:~$ curl 192.168.1.110:5000
+curl: (7) Failed to connect to 192.168.1.110 port 5000: Connection refused
+1 iptables -L
+2 iptables -F
+
+
+### Fix centos play book cannot create db user
+Install dcc and follow in target machine.
+https://github.com/ansible/ansible/issues/47927#issuecomment-438351341
+
+### Stop flush server
+sudo netstat -tulnp | grep :5000
+sudo kill 28834
