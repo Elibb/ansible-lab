@@ -56,3 +56,8 @@ https://github.com/ansible/ansible/issues/47927#issuecomment-438351341
 ### Stop flush server
 sudo netstat -tulnp | grep :5000
 sudo kill 28834
+
+
+### Copy public key to remote
+cat ~/.ssh/id_rsa.pub | ssh root@192.168.1.120 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
