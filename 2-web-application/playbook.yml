@@ -1,5 +1,5 @@
 - name: Deploy a website with mysql
-  hosts: ubuntu2
+  hosts: ubuntu3
   vars:
     db_name: employee_db
     db_user: db_user

@@ -1,6 +1,6 @@
 
-ubuntu2 ansible_host=192.168.0.117 ansible_connection=ssh ansible_user=ebi ansible_ssh_pass=Labuser1 ansible_become_pass=Labuser1
+ubuntu3 ansible_host=192.168.0.120 ansible_connection=ssh ansible_user=ebi ansible_ssh_pass=Eli123 ansible_become_pass=Eli123
 
 
-# target1 ansible_host=192.168.1.113 ansible_connection=ssh ansible_user=root ansible_ssh_pass=Labuser1
+# target1 ansible_host=192.168.1.113 ansible_connection=ssh ansible_user=root ansible_ssh_pass=Eli123
 # db_and_web_server ansible_connection=ssh ansible_ssh_pass=Passw0rd ansible_host=192.168.1.14
