@@ -1,0 +1,11 @@
+
+ansible_host: 192.168.1.124
+
+ansible_connection: ssh
+ansible_user: ebi
+ansible_ssh_pass: Eli123
+ansible_become_pass: Eli123
+
+db_name: employee_db
+db_user: db_user
+db_password: Passw0rd
