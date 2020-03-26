@@ -1,5 +1,8 @@
 NOTE1 Env Setup
 
+### VirtualBox set two nic one has static IP
+https://www.codesandnotes.be/2018/10/16/network-of-virtualbox-instances-with-static-ip-addresses-and-internet-access/
+
 ### Download OS from osboxes
 https://www.osboxes.org/
 
