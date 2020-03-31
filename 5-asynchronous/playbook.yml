@@ -1,0 +1,14 @@
+- name: Test ansbile asynchronous actions
+  hosts: ubuntu1
+  roles: 
+    # - python
+    # - deploy_db
+    # - deploy_web
+    - deploy_db_web
+
+  tasks:
+    - name: Print debug info
+      debug:
+        msg: 
+          - "Reach to the bottom of playbook."
+          - "{{ ansible_date_time.iso8601 }}"

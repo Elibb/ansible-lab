@@ -1,0 +1,48 @@
+- name: Install PYTHON dependency
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python
+    - python-setuptools
+    - python-dev
+    - build-essential
+    - python-pip
+    - python-mysqldb
+  async: 360
+  poll: 0
+  register: python_install_result
+
+- name: debug python_install_result
+  debug: 
+    msg: "{{python_install_result}}"
+
+### apt cannot install two packages at one time 
+
+# - name: Install NODEJS dependency
+#   apt: 
+#     name: nodejs
+#     state: present
+#   async: 360
+#   poll: 0
+#   register: nodejs_install_result
+
+# - name: debug nodejs_install_result
+#   debug: 
+#     msg:
+#       - "{{nodejs_install_result}}"
+#       - "{{nodejs_install_result.ansible_job_id}}"
+
+
+
+# - name: Check NODEJS dependency install result
+#   async_status: jid={{nodejs_install_result.ansible_job_id}}
+#   register: job_result
+#   until: job_result.finished
+#   retries: 30
+
+- name: Check PYTHON dependency install result
+  async_status: jid={{python_install_result.results[0].ansible_job_id}}
+  register: job_result
+  until: job_result.finished
+  retries: 30

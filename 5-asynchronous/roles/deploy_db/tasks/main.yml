@@ -1,0 +1,5 @@
+- name: Copy deploy_db_scripts.py to target machine
+  copy: src=./scripts/deploy_db_scripts.py dest=/opt/deploy_db_scripts.py
+
+- name: Run dummy deploy DB scripts
+  shell: python /opt/deploy_db_scripts.py
