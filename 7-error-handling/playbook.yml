@@ -1,0 +1,42 @@
+-
+  name: Deploy website with ansible
+  # hosts: ubuntu_groups
+  hosts: ubuntu1
+  # any_errors_fatal: true
+
+  tasks:
+    - name: fail one host
+      apt:
+        name: fake-package
+        state: present
+      when: inventory_hostname == 'ubuntu1'
+      ignore_errors: yes
+      register: install_output
+
+    - debug: 
+        var: install_output
+
+    # - name: Install dependency
+    #   apt:
+    #     name: "{{ item }}"
+    #     state: present
+    #   with_items:
+    #     - python
+    #     - python-setuptools
+    #     - python-dev
+    #     - build-essential
+    #     - python-pip
+    #     - python-mysqldb
+    
+    # - import_tasks: tasks/deploy_db.yml
+
+    # - import_tasks: tasks/deploy_web.yml
+
+
+    # failed_when
+    - command: cat /var/log/syslog
+      register: syslog_output
+      failed_when: "'fake-package' in syslog_output.stdout" 
+
+    - debug: 
+        var: syslog_output
