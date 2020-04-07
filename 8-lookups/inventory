@@ -1,0 +1,2 @@
+ubuntu1 ansible_host=192.168.56.108 ansible_user=ebi
+ubuntu2 ansible_host=192.168.56.109 ansible_user=ebi

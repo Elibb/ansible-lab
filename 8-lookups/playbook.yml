@@ -1,0 +1,15 @@
+- 
+  name: Test lookups
+  hosts: ubuntu1
+  vars:
+    # ansible_ssh_pass:  "{{ lookup('csvfile', 'ubuntu1 file=credential.csv delimiter=,' )}}"
+    ansible_ssh_pass:  "{{ lookup('ini', 'password section=ubuntu1 file=credential.ini' )}}"
+  tasks:
+    - name: Ping target host
+      ping: 
+        data: "TEST"
+
+    - debug: 
+        # msg: "{{ lookup('csvfile', 'ubuntu1 file=credential.csv delimiter=,' )}}"
+        msg: "{{ansible_ssh_pass}}"
+
