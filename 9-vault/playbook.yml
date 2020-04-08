@@ -1,0 +1,20 @@
+# Run playbook with vault
+
+# ansible-vault view inventory
+# ansible-playbook  playbook.yml -i inventory --ask-vault-pass
+
+# Note vault-password.txt cannot be exec(aka chmod 600)
+# ansible-playbook  playbook.yml -i inventory --vault-password-file vault-password.txt  
+
+- 
+  name: Test lookups
+  # hosts: ubuntu1
+  hosts: target1
+  tasks:
+    - name: Ping target host
+      ping: 
+        data: "TEST"
+
+    - name: Run command to check target datetime. 
+      command: touch a
+

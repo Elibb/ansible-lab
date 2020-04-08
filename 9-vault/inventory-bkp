@@ -1,0 +1,2 @@
+ubuntu1 ansible_host=192.168.56.108 ansible_user=ebi ansible_ssh_pass=Password12
+target1 ansible_host=192.168.56.101 ansible_user=ebi ansible_ssh_pass=Labuser1 ansible_become_pass=Labuser1
