@@ -1,0 +1,22 @@
+# TO RUN
+#  ansible-playbook playbook.yml -i inventory.py
+
+# NOTE dynamic inventory script need to be executable, eg ./inventory.py
+# If the file is from windows, need to change fileformate from dos line endings to unix.
+# use vim 
+# :set ff
+# :set ff=unix
+
+
+- 
+  name: Test Dynamic Inventory
+  hosts: centos
+  # hosts: target1
+  tasks:
+    - name: Ping target host
+      ping: 
+        data: "TEST"
+
+    - name: Run command to check target datetime. 
+      command: touch a
+
