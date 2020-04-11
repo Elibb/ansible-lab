@@ -1,0 +1,15 @@
+# ANSIBLE_LIBRARY
+# export ANSIBLE_LIBRARY=/root/lab/12-custom-modules
+
+
+
+- name: Test custom module
+  hosts: target1
+  tasks:
+    - name: ping Tess
+      ping:
+        
+    - name: Debug info
+      custome_debug:
+        msg: "Messages from custome debug module..."
+

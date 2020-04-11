@@ -64,3 +64,10 @@ sudo kill 28834
 ### Copy public key to remote
 cat ~/.ssh/id_rsa.pub | ssh root@192.168.1.120 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
+
+
+NOTE12 Custom module
+### Use custom module by put script to one of those location:
+~/.ansible/plugins/modules/
+/usr/share/ansible/plugins/modules/
+any directory in ANSIBLE_LIBRARY environment variable
