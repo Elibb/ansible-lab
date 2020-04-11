@@ -1,0 +1,15 @@
+# export ANSIBLE_FILTER_PLUGINS=/filter_plugins
+
+- name: Test custom plugin.
+  hosts: localhost
+  vars:
+    marks:
+      - 10
+      - 20
+      - 30
+      - 40
+
+  tasks:
+    - debug:
+        msg: "{{marks|avg}}"
+        # msg: "123"
